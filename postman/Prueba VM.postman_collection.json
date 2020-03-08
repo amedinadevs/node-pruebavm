@@ -72,7 +72,7 @@
 						},
 						{
 							"key": "email",
-							"value": "deumeu@alexmedina.net",
+							"value": "info@alexmedina.net",
 							"type": "text"
 						},
 						{
@@ -143,7 +143,7 @@
 						},
 						{
 							"key": "email",
-							"value": "sadada@alexmedina.net",
+							"value": "cambio@alexmedina.net",
 							"type": "text"
 						},
 						{
@@ -169,14 +169,14 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/usuario/5e62a309290b522150603d16",
+					"raw": "localhost:3000/usuario/5e65226653614e078c0264ed",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"usuario",
-						"5e62a309290b522150603d16"
+						"5e65226653614e078c0264ed"
 					]
 				},
 				"description": "Para ejecutar este método se le pasa por parámetro GET el _Id del Usuario. En caso de ser incorrecto devolverá usuario=null."
@@ -217,14 +217,14 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/usuario/5e62a69cb1e56e04b4216ef2",
+					"raw": "localhost:3000/usuario/5e65226653614e078c0264ed",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"usuario",
-						"5e62a69cb1e56e04b4216ef2"
+						"5e65226653614e078c0264ed"
 					]
 				},
 				"description": "Elimina el registro de la base de datos."
@@ -265,7 +265,7 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/usuario/remove/5e62a69cb1e56e04b4216ef2",
+					"raw": "localhost:3000/usuario/remove/5e65226653614e078c0264ed",
 					"host": [
 						"localhost"
 					],
@@ -273,7 +273,7 @@
 					"path": [
 						"usuario",
 						"remove",
-						"5e62a69cb1e56e04b4216ef2"
+						"5e65226653614e078c0264ed"
 					]
 				},
 				"description": "Pone el estado del registro a false. Para ocultarlo."
