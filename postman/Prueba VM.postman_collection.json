@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "a1110506-b9d1-403d-9fb8-7ad429c2a386",
+		"name": "Prueba VM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario - Listar Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/usuario?desde=0&limite=5",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "0"
+						},
+						{
+							"key": "limite",
+							"value": "5"
+						}
+					]
+				},
+				"description": "Lista usuarios páginados. Útil para listas. Necesita estar autentificado para ejecutar este método."
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario - Alta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Alex",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "Medina",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "deumeu@alexmedina.net",
+							"type": "text"
+						},
+						{
+							"key": "pais",
+							"value": "España",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "666006600",
+							"type": "text"
+						},
+						{
+							"key": "cp",
+							"value": "46000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario"
+					]
+				},
+				"description": "Este servicio es el de registro de usuarios (EndPoint de alta del usuario)\nNo necesita token"
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario - Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Alex",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "Gomez",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "5678",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sadada@alexmedina.net",
+							"type": "text"
+						},
+						{
+							"key": "password_new",
+							"value": "5678",
+							"type": "text"
+						},
+						{
+							"key": "pais",
+							"value": "Francia",
+							"type": "text"
+						},
+						{
+							"key": "cp",
+							"value": "5557",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "670777222",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/usuario/5e62a309290b522150603d16",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"5e62a309290b522150603d16"
+					]
+				},
+				"description": "Para ejecutar este método se le pasa por parámetro GET el _Id del Usuario. En caso de ser incorrecto devolverá usuario=null."
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario - Delete (fisico)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Alejandro Medina",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/usuario/5e62a69cb1e56e04b4216ef2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"5e62a69cb1e56e04b4216ef2"
+					]
+				},
+				"description": "Elimina el registro de la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario - Delete (estado=false)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Alejandro Medina",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/usuario/remove/5e62a69cb1e56e04b4216ef2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"remove",
+						"5e62a69cb1e56e04b4216ef2"
+					]
+				},
+				"description": "Pone el estado del registro a false. Para ocultarlo."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8aabc351-a10a-457a-9cb9-58e73b08f7e1",
+						"exec": [
+							"let resp = pm.response.json();",
+							"",
+							"if(resp.ok){",
+							"    let token = resp.token;",
+							"    console.log(token); // View / PostMan Console",
+							"    pm.environment.set(\"token\" , token )",
+							"}",
+							"else {",
+							"    console.log(\"no se actualizó el token\"); // View / PostMan Console",
+							"}",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "info@alexmedina.net",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
